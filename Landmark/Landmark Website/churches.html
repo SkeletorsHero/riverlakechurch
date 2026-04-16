@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Churches — Landmark Network</title>
+  <meta name="description" content="Meet the 13 churches in the Landmark Network — a community of pastors across the United States and beyond." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="images/brandmark.png" />
+  <style>
+    .churches-filter {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      padding: 0.45rem 1.1rem;
+      border: 1.5px solid #ddd;
+      border-radius: 100px;
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #555;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--white);
+    }
+    .partner-section {
+      margin-top: 4rem;
+      padding-top: 4rem;
+      border-top: 1px solid #eee;
+    }
+    .partner-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .partner-card {
+      background: var(--light-bg);
+      border-radius: 8px;
+      padding: 1.5rem;
+      border: 1px solid #e8e8e8;
+    }
+    .partner-card h4 { margin-bottom: 0.25rem; }
+    .partner-card .church-card__location { margin-bottom: 0.5rem; }
+    .church-count {
+      font-size: 0.875rem;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVIGATION ══════════════════════════════════════════ -->
+  <nav class="nav scrolled" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Landmark Network" class="nav__logo" style="filter:none;" />
+      </a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html"    class="nav__link">Home</a></li>
+        <li><a href="about.html"    class="nav__link">Our Model</a></li>
+        <li><a href="churches.html" class="nav__link active">Our Churches</a></li>
+        <li><a href="events.html"   class="nav__link">Events</a></li>
+        <li><a href="members.html"  class="nav__link">Members</a></li>
+        <li><a href="mailto:nic@riverlakechurch.com" class="nav__cta btn">Connect With Us</a></li>
+      </ul>
+      <div class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══ PAGE HERO ════════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">The Network</span>
+      <h1>Our Family of Churches</h1>
+      <div class="divider"></div>
+      <p>
+        Landmark is made up of 13 partner churches across the United States —
+        each one unique, each one committed to the same mission, and each one
+        genuinely invested in the others.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ CHURCHES ═════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Filter buttons -->
+      <div class="churches-filter">
+        <button class="filter-btn active" data-filter="all">All Churches</button>
+        <button class="filter-btn" data-filter="responsible">Responsible</button>
+        <button class="filter-btn" data-filter="relational">Relational</button>
+        <button class="filter-btn" data-filter="resource">Resource</button>
+      </div>
+
+      <p class="church-count">Showing <strong id="church-count">13</strong> partner churches</p>
+
+      <div class="churches-grid" id="churches-grid">
+
+        <!-- ── Responsible Tier ── -->
+        <div class="church-card" data-tier="responsible">
+          <span class="church-card__tier tier-responsible">Responsible</span>
+          <h4>Generation Church</h4>
+          <div class="church-card__location">📍 Portland, TN</div>
+          <div class="church-card__pastor">Pastor Brandon Petty</div>
+          <a href="http://www.generationchurch.me" target="_blank" rel="noopener" class="church-card__link">Visit Website →</a>
+        </div>
+
+        <div class="church-card" data-tier="responsible">
+          <span class="church-card__tier tier-responsible">Responsible</span>
+          <h4>Real Life Church</h4>
+          <div class="church-card__location">📍 Mountain Home, AR</div>
+          <div class="church-card__pastor">Pastor Vince Daniel</div>
+          <a href="http://www.rlclive.com" target="_blank" rel="noopener" class="church-card__link">Visit Website →</a>
+        </div>
+
+        <div class="church-card" data-tier="responsible">
+          <span class="church-card__tier tier-responsible">Responsible</span>
+          <h4>Strong Tower Church</h4>
+          <div class="church-card__location">📍 Westmoreland, TN</div>
+          <div class="church-card__pastor">Pastor David Mitchell</div>
+          <a href="http://www.strongtowerchurch.com" target="_blank" rel="noopener" class="church-card__link">Visit Website →</a>
+        </div>
+
+        <div class="church-card" data-tier="responsible">
+          <span class="church-card__tier tier-responsible">Responsible</span>
+          <h4>River Lake Church</h4>
+          <div class="church-card__location">📍 Glasgow, KY</div>
+          <div class="church-card__pastor">Pastor Nic Smith</div>
+          <a href="http://www.riverlakechurch.com" target="_blank" rel="noopener" class="church-card__link">Visit Website →</a>
+        </div>
+
+        <div class="church-card" data-tier="responsible">
+          <span class="church-card__tier tier-responsible">Responsible</span>
+          <h4>Center Point Church</h4>
+          <div class="church-card__location">📍 Hendersonville, TN</div>
+          <div class="church-card__pastor">Pastor Jason Baugh</div>
+          <a href="http://www.centerpointtn.com" target="_blank" rel="noopener" class="church-card__link">Visit Website →</a>
+        </div>
+
+        <!-- ── Relational Tier ── -->
+        <div class="church-card" data-tier="relational">
+          <span class="church-card__tier tier-relational">Relational</span>
+          <h4>Renovation Church</h4>
+          <div class="church-card__location">📍 Gallatin, TN</div>
+          <div class="church-card__pastor">Pastor Kody Woodard</div>
+          <a href="http://www.renovation.church" target="_blank" rel="noopener" class="church-card__link">Visit Website →</a>
+        </div>
+
+        <div class="church-card" data-tier="relational">
+          <span class="church-card__tier tier-relational">Relational</span>
+          <h4>City Light Church</h4>
+          <div class="church-card__location">📍 Bowling Green, KY</div>
+          <div class="church-card__pastor">Pastor Brennan Washington</div>
+          <a href="http://www.citylightky.com" target="_blank" rel="noopener" class="church-card__link">Visit Website →</a>
+        </div>
+
+        <div class="church-card" data-tier="relational">
+          <span class="church-card__tier tier-relational">Relational</span>
+          <h4>Rejoice Church</h4>
+          <div class="church-card__location">📍 Owasso, OK</div>
+          <div class="church-card__pastor">Pastor Casey Cariker</div>
+          <a href="http://www.rejoicechurch.com" target="_blank" rel="noopener" class="church-card__link">Visit Website →</a>
+        </div>
+
+        <div class="church-card" data-tier="relational">
+          <span class="church-card__tier tier-relational">Relational</span>
+          <h4>Commonway Church</h4>
+          <div class="church-card__location">📍 Muncie, IN</div>
+          <div class="church-card__pastor">Pastor Steve Gill</div>
+          <a href="http://www.commonwaychurch.com" target="_blank" rel="noopener" class="church-card__link">Visit Website →</a>
+        </div>
+
+        <div class="church-card" data-tier="relational">
+          <span class="church-card__tier tier-relational">Relational</span>
+          <h4>City Lights Church</h4>
+          <div class="church-card__location">📍 Chula Vista, CA</div>
+          <div class="church-card__pastor">Pastor Amos Dillard</div>
+          <a href="http://www.citylightscv.com" target="_blank" rel="noopener" class="church-card__link">Visit Website →</a>
+        </div>
+
+        <!-- ── Resource Tier ── -->
+        <div class="church-card" data-tier="resource">
+          <span class="church-card__tier tier-resource">Resource</span>
+          <h4>Turning Point Church</h4>
+          <div class="church-card__location">📍 Bonita Springs, FL</div>
+          <div class="church-card__pastor">Pastor Steven Knight</div>
+          <a href="http://www.tpclive.org" target="_blank" rel="noopener" class="church-card__link">Visit Website →</a>
+        </div>
+
+        <div class="church-card" data-tier="resource">
+          <span class="church-card__tier tier-resource">Resource</span>
+          <h4>Expedition Church</h4>
+          <div class="church-card__location">📍 Cañon City, CO</div>
+          <div class="church-card__pastor">Pastor Justin Banks</div>
+          <a href="http://www.itsanexpedition.com" target="_blank" rel="noopener" class="church-card__link">Visit Website →</a>
+        </div>
+
+        <div class="church-card" data-tier="resource">
+          <span class="church-card__tier tier-resource">Resource</span>
+          <h4>Hillside Church</h4>
+          <div class="church-card__location">📍 Flint, MI</div>
+          <div class="church-card__pastor">Pastor Justin Rose</div>
+          <a href="http://www.hillsidegb.com" target="_blank" rel="noopener" class="church-card__link">Visit Website →</a>
+        </div>
+
+      </div><!-- /churches-grid -->
+
+      <!-- ── Global Partners ── -->
+      <div class="partner-section">
+        <span class="eyebrow">Global Partners</span>
+        <h2>Beyond Borders</h2>
+        <p style="max-width:580px; margin-top:0.75rem;">
+          Landmark's reach extends internationally through strategic partnerships
+          with church planting organizations that share our heart for the gospel.
+        </p>
+        <div class="partner-cards">
+          <div class="partner-card">
+            <h4>Iglesia de la Ciudad</h4>
+            <div class="church-card__location">📍 San Rafael Abajo, Costa Rica</div>
+            <div class="church-card__pastor" style="margin-top:0.5rem; font-size:0.875rem; color:#555;">Mission partner since 2023 · Pastor Miguel Rojas</div>
+            <a href="http://www.goforthecity.org" target="_blank" rel="noopener" class="church-card__link" style="margin-top:0.75rem;">Visit Website →</a>
+          </div>
+          <div class="partner-card">
+            <h4>Plant California</h4>
+            <div class="church-card__location">📍 California</div>
+            <div class="church-card__pastor" style="margin-top:0.5rem; font-size:0.875rem; color:#555;">Church planting partner since 2024</div>
+            <a href="http://www.plantcali.com" target="_blank" rel="noopener" class="church-card__link" style="margin-top:0.75rem;">Visit Website →</a>
+          </div>
+          <div class="partner-card">
+            <h4>We Start Churches</h4>
+            <div class="church-card__location">📍 Oklahoma</div>
+            <div class="church-card__pastor" style="margin-top:0.5rem; font-size:0.875rem; color:#555;">Church planting partner since 2025</div>
+            <a href="http://www.westartchurches.com" target="_blank" rel="noopener" class="church-card__link" style="margin-top:0.75rem;">Visit Website →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ CTA ══════════════════════════════════════════════════ -->
+  <section class="cta-banner">
+    <div class="container">
+      <span class="eyebrow" style="color:rgba(255,255,255,0.5);">Is Your Church a Fit?</span>
+      <h2>Join a Family<br>That Runs Toward You.</h2>
+      <p>Landmark churches don't just know each other's names — they know each other's stories. If that's the kind of network you've been looking for, let's talk.</p>
+      <a href="mailto:nic@riverlakechurch.com" class="btn btn-primary">Learn About Our Model</a>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="images/logo.png" alt="Landmark Network" class="footer__logo" />
+          <p>A community of pastors committed to starting, strengthening, and setting churches to thrive.</p>
+        </div>
+        <div class="footer__col">
+          <h5>Network</h5>
+          <a href="about.html"    class="footer__link">Our Model</a>
+          <a href="churches.html" class="footer__link">Our Churches</a>
+          <a href="events.html"   class="footer__link">Events</a>
+          <a href="members.html"  class="footer__link">Member Portal</a>
+        </div>
+        <div class="footer__col">
+          <h5>Events</h5>
+          <a href="REPLACE_WITH_ONE_DAY_LINK" target="_blank" class="footer__link">One Day</a>
+          <a href="REPLACE_WITH_MISSIONS_LINK" target="_blank" class="footer__link">Missions</a>
+        </div>
+        <div class="footer__col">
+          <h5>Connect</h5>
+          <a href="mailto:nic@riverlakechurch.com" class="footer__link">nic@riverlakechurch.com</a>
+          <a href="http://www.landmarknetwork.com"  class="footer__link">landmarknetwork.com</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Landmark Network. All rights reserved.</span>
+        <span>Starting · Strengthening · Setting</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#churches-grid .church-card');
+    const countEl = document.getElementById('church-count');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        let count = 0;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.tier === filter) {
+            card.style.display = '';
+            count++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        countEl.textContent = count;
+      });
+    });
+  </script>
+</body>
+</html>

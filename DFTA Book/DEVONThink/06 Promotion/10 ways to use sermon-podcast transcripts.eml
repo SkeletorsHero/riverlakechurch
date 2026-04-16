@@ -1,0 +1,681 @@
+Delivered-To: smith.nic@gmail.com
+Received: by 2002:a05:6a11:e09b:b0:36a:7b72:fb68 with SMTP id dm27csp1988612pxc;
+        Tue, 27 Dec 2022 09:00:26 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXspKgfEuRCS4CcZg+FNZc/wcc1erfwtAd7FgsFL0QCrDfxK2pd/Rpbadc/zhjqJ9V4zTIuG
+X-Received: by 2002:ac8:6e8e:0:b0:3a8:1d3c:47e1 with SMTP id c14-20020ac86e8e000000b003a81d3c47e1mr34010002qtv.58.1672160426605;
+        Tue, 27 Dec 2022 09:00:26 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1672160426; cv=none;
+        d=google.com; s=arc-20160816;
+        b=w8HZnaN5cxFvOpKIamHLgnTftYkbY8PDm537CgcLV38LJeuEHGfqO/okblVkIOULNG
+         mPsJTJhf3T7zaw0BCPR2D5Kfqk7wvetccJ5FQwfgmBPemswNEDVaN/Qymv+MiDRQLbBg
+         5sLTdhfggXnY3TZefUIvs81Y7UBPtMb9nlDbXDKHFE0zHzUVrnothvsDUOtc2tbm5b8v
+         vK+cDaAaBZluSGONHfKh093JTqZh9Zofnxf+UAg7WiDqxUu6AzawxSkinQ4zXyUM2LU1
+         ycSeKF9FKCxJomN2omHVhaCe1xiJuyyt23jevIyNt8Ve06PovMmfZQX1rbCfLNUJdgik
+         Y9GQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:sender:list-unsubscribe-post:list-unsubscribe
+         :feedback-id:content-transfer-encoding:mime-version:date:subject
+         :from:to:dkim-signature:dkim-signature;
+        bh=y/UttDBrTzhkZaLkJMK+I3GBpvdTxCHc2ZXh9XlqKZ0=;
+        b=Iz3HM6EXtkrCw7y/4VMgcgMK1/khzmjEliGzbysridQ9vPWzcW0TSfokncfcEuNQvm
+         PRN89S4irFFoWkGw5PsfWhjTYeSq5VzXSiDu30bylfUenbt8+YTDs+8q9ds22dxBoqam
+         6+yxT7/pNuqXnf/BWtap0GknR+MPsgtngOqKUJii/4E4AlPz1sy8SoZc/WTs5qx5Il5H
+         wXCRq488nRLC+kVK15Gsb+sAPcLCm+QF5Zi8uShs6kFNMBIAZgn01iPioSM5ylJw8Yuc
+         vBok2HBiedlGRFpj483fWd2ZOm0Kc8SkK3IQ2Yvp3UYNCgHLZSQItQAyURIpJ9oV/ngS
+         IeiA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@d13c.emsend1.com header.s=dk header.b=ypYIo9pe;
+       dkim=pass header.i=@acems1.com header.s=dk header.b=2kSpO7yU;
+       spf=pass (google.com: domain of bounce-465635-355-38675-smith.nic=gmail.com@d13c.emsend1.com designates 52.128.42.42 as permitted sender) smtp.mailfrom="bounce-465635-355-38675-smith.nic=gmail.com@d13c.emsend1.com"
+Return-Path: <bounce-465635-355-38675-smith.nic=gmail.com@d13c.emsend1.com>
+Received: from d12c.emsend1.com (d12c.emsend1.com. [52.128.42.42])
+        by mx.google.com with ESMTPS id dw5-20020a05620a600500b006f765f6a9a5si5342620qkb.78.2022.12.27.09.00.26
+        for <smith.nic@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 27 Dec 2022 09:00:26 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-465635-355-38675-smith.nic=gmail.com@d13c.emsend1.com designates 52.128.42.42 as permitted sender) client-ip=52.128.42.42;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@d13c.emsend1.com header.s=dk header.b=ypYIo9pe;
+       dkim=pass header.i=@acems1.com header.s=dk header.b=2kSpO7yU;
+       spf=pass (google.com: domain of bounce-465635-355-38675-smith.nic=gmail.com@d13c.emsend1.com designates 52.128.42.42 as permitted sender) smtp.mailfrom="bounce-465635-355-38675-smith.nic=gmail.com@d13c.emsend1.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=dk; d=d13c.emsend1.com;
+ h=To:From:Subject:Date:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ List-Unsubscribe:List-Unsubscribe-Post:Sender:Message-ID;
+ i=gtbootcamp.activehosted.com@d13c.emsend1.com;
+ bh=y/UttDBrTzhkZaLkJMK+I3GBpvdTxCHc2ZXh9XlqKZ0=;
+ b=ypYIo9peHEo/VIlvqlAZ8Ckp/0L/SgS67uBG9wGaEVY8Iqkmw/1u/47pm/5xpRlrbb9QSwEBtiWP
+   a8oJZFPXDw3oxR3CeQGNwdB+e3eA1Z1VJT8d+Vj9ht7HLk53DXprXhv5gugryYtC0NUE+f7Q26GI
+   gkzBtNMw227TDW8wNdg=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=dk; d=acems1.com;
+ h=To:From:Subject:Date:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ List-Unsubscribe:List-Unsubscribe-Post:Sender:Message-ID;
+ bh=y/UttDBrTzhkZaLkJMK+I3GBpvdTxCHc2ZXh9XlqKZ0=;
+ b=2kSpO7yUPQd1Mf16Ul1lzb7hEvma+YF1iw+uNC9zwjoI8EfnIn5x+rJ8Uxe5FmN7rnHzlMgzF9li
+   fLUBsV2qoPp0ACDvDX3jx62mA53++zK1R7qhY9aq6gycEqa4A5nQwI/sGSK1Z+utKIPMTrLU10HK
+   VvyG86Rag6Yvd2fbquo=
+Received: by d12c.emsend1.com id hlciak30sfoc for <smith.nic@gmail.com>; Tue, 27 Dec 2022 17:00:13 +0000 (envelope-from <bounce-465635-355-38675-smith.nic=gmail.com@d13c.emsend1.com>)
+X-Mailer: ActiveCampaign Mailer
+To: "Nic Smith" <smith.nic@gmail.com>
+From: "Ginger Schell" <gschell@intentionalreach.com>
+Subject: 10 ways to use sermon/podcast transcripts
+Date: Tue, 27 Dec 2022 11:00:01 -0600
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift-90456462863ab249119cff8.17267029_=_"
+Content-Transfer-Encoding: 7bit
+X-mid: c21pdGgubmljQGdtYWlsLmNvbSAsIGMzNTUgLCBtNDk5ICwgczM4ODIwNw
+x-virtual-mta: d12c.emsend1.com
+Feedback-ID: 465635:activecampaign
+X-250ok-CID: 465635-355
+List-Unsubscribe: <mailto:unsubscribe-5159ecdebaa88eff320b0fc8a770ee70-355-61f9d41d9423930b87a5c702304080e4@d13c.emsend1.com>,
+ <http://gtbootcamp.activehosted.com/box.php?nl=30&c=355&m=499&s=61f9d41d9423930b87a5c702304080e4&funcml=unsub2&luha=1>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Sender: <gtbootcamp.activehosted.com@d13c.emsend1.com>
+X-Sender: <gtbootcamp.activehosted.com@d13c.emsend1.com>
+X-Report-Abuse: Please report abuse to abuse@activecampaign.com
+Message-ID: <20221227170013.24867.326816930.swift@gtbootcamp.activehosted.com>
+
+
+
+--_=_swift-90456462863ab249119cff8.17267029_=_
+Content-Type: text/plain; charset=utf-8
+
+What if you could take your weekly sermons/podcasts and... 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+
+
+You received this email because you signed up to learn about how to
+reach more people with your sermons or podcasts.  Don't want future
+emails? 
+
+Unsubscribe
+<http://gtbootcamp.activehosted.com/proc.php?nl=30&c=355&m=499&s=61f9d41d9423930b87a5c702304080e4&act=unsub>
+
+ 
+
+What if you could take your weekly audio/video sermons or podcasts and
+turn them into high-quality custom-designed transcripts that could be
+used many different ways to reach more people with your message?
+
+Examples:
+
+* Newsletters
+
+* Blog posts
+
+* Social media posts
+
+* Daily email devotions
+
+* Group studies
+
+* Online courses
+
+* Prison ministries
+
+* Shut-in ministries
+
+* Book manuscripts
+
+Not to mention that simply posting a downloadable transcript beside your
+audio/video sermons/podcasts will help you reach three times as many
+people online than you're reaching now.
+
+How awesome would that be? 
+
+Note: If your sermons are about 30 minutes long, it would cost your
+church/business about $400 per month, and the cost can be claimed as an
+expense on your yearly taxes.
+
+Heads up: I'm offering a huge end-of-year discount on weekly
+transcription service. This discount will apply to all your transcripts
+in 2023. This offer expires at the end of this week. Let me know if
+you'd like the details. 
+
+Ready to get started? Click here
+<https://gtbootcamp.lt.acemlnb.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZkaWdpdGFsc2VybW9udHJhbnNjcmlwdGlvbi53dWZvby5jb20lMkZmb3JtcyUyRm10MGNzbDEwamwyN3k1JTJG&sig=F4vwWg8vUCYtWmQNk8vBonQoa4wzVmCHZ692akfSyLev&iat=1672160413&a=%7C%7C649253065%7C%7C&account=gtbootcamp%2Eactivehosted%2Ecom&email=k03cBWZRpqH1g0SOBW1XWkzkASpiHornD%2Fz2wZTd1jg%3D&s=61f9d41d9423930b87a5c702304080e4&i=355A499A30A1428> to
+fill out an order form.
+
+Let me know if you have any questions. 
+
+Ginger
+
+P.S. Want to see samples of our work? Click here
+<https://gtbootcamp.lt.acemlnb.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZpbnRlbnRpb25hbHJlYWNoLmNvbSUyRnNlcm1vbi10cmFuc2NyaXB0cw==&sig=4PFhQn4fB7PkYFqbYMkwtEYsPtA8x14iaoBbu8YqFyKx&iat=1672160413&a=%7C%7C649253065%7C%7C&account=gtbootcamp%2Eactivehosted%2Ecom&email=k03cBWZRpqH1g0SOBW1XWkzkASpiHornD%2Fz2wZTd1jg%3D&s=61f9d41d9423930b87a5c702304080e4&i=355A499A30A1429>.
+
+___________________________
+Ginger Schell
+Owner, Intentional Reach <https://gtbootcamp.lt.acemlnb.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZpbnRlbnRpb25hbHJlYWNoLmNvbQ==&sig=JBipC39emEBFNo5bAahhXcBgP9ScuLMXJx7aFu4vPBNH&iat=1672160413&a=%7C%7C649253065%7C%7C&account=gtbootcamp%2Eactivehosted%2Ecom&email=k03cBWZRpqH1g0SOBW1XWkzkASpiHornD%2Fz2wZTd1jg%3D&s=61f9d41d9423930b87a5c702304080e4&i=355A499A30A1430>
+217.504.3914 (cell) 
+
+Are you ready to reach 3X more people with transcripts? Start here
+<https://gtbootcamp.lt.acemlnb.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZkaWdpdGFsc2VybW9udHJhbnNjcmlwdGlvbi53dWZvby5jb20lMkZmb3JtcyUyRm10MGNzbDEwamwyN3k1JTJG&sig=F4vwWg8vUCYtWmQNk8vBonQoa4wzVmCHZ692akfSyLev&iat=1672160413&a=%7C%7C649253065%7C%7C&account=gtbootcamp%2Eactivehosted%2Ecom&email=k03cBWZRpqH1g0SOBW1XWkzkASpiHornD%2Fz2wZTd1jg%3D&s=61f9d41d9423930b87a5c702304080e4&i=355A499A30A1428>.
+
+********
+"You guys have sold yourselves so that now I have multiple ministries in
+the church clamoring and saying, 'Can I have my stuff transcribed too?'"
+~ Watermark Church, Texas
+
+Sent to: smith.nic@gmail.com
+
+Intentional Reach, 3530 Verdier Blvd. Unit 1105, Charleston, SC 29414, United States
+
+You received this email because you signed up to learn about how to
+reach more people with your sermons or podcasts.  Don't want future
+emails? 
+
+Unsubscribe
+<http://gtbootcamp.activehosted.com/proc.php?nl=30&c=355&m=499&s=61f9d41d9423930b87a5c702304080e4&act=unsub>
+
+Ready to get your custom-designed transcripts? Fill out an order form
+here
+<https://gtbootcamp.lt.acemlnb.com/Prod/link-tracker?redirectUrl=aHR0cHMlM0ElMkYlMkZkaWdpdGFsc2VybW9udHJhbnNjcmlwdGlvbi53dWZvby5jb20lMkZmb3JtcyUyRm10MGNzbDEwamwyN3k1JTJG&sig=F4vwWg8vUCYtWmQNk8vBonQoa4wzVmCHZ692akfSyLev&iat=1672160413&a=%7C%7C649253065%7C%7C&account=gtbootcamp%2Eactivehosted%2Ecom&email=k03cBWZRpqH1g0SOBW1XWkzkASpiHornD%2Fz2wZTd1jg%3D&s=61f9d41d9423930b87a5c702304080e4&i=355A499A30A1428>.
+--_=_swift-90456462863ab249119cff8.17267029_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html>=0A<head><meta http-equiv=3D"Content-Type" content=3D"=
+text/html; charset=3Dutf-8"><meta http-equiv=3D"Content-Language" content=
+=3D"en-us"><meta name=3D"format-detection" content=3D"telephone=3Dno"><meta=
+ name=3D"format-detection" content=3D"date=3Dno"><meta name=3D"format-detec=
+tion" content=3D"address=3Dno"><meta name=3D"format-detection" content=3D"e=
+mail=3Dno"><meta name=3D"viewport" content=3D"width=3Ddevice-width, minimal=
+-ui, initial-scale=3D1.0, maximum-scale=3D1.0, user-scalable=3D0;"><meta ht=
+tp-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><style data-ac-keep=3D"t=
+rue"> .ExternalClass { width: 100%; background: inherit; background-color: =
+inherit; } .ExternalClass, .ExternalClass p, .ExternalClass span, .External=
+Class font, .ExternalClass td, .ExternalClass div { line-height: 100%; } .E=
+xternalClass p, .ExternalClass ul, .ExternalClass ol { Margin: 0; } .undore=
+set div p, .undoreset p { margin-bottom: 20px; } div[class^=3D"aolmail_divb=
+ody"] { overflow: auto; } [owa] #ac-footer { padding: 20px 0px !important; =
+background:=0Ainherit; background-color: inherit; } a[x-apple-data-detector=
+s] { color: inherit !important; text-decoration: none !important; font-size=
+: inherit !important; font-family: inherit !important; font-weight: inherit=
+ !important; line-height: inherit !important; } @-ms-viewport { width: devi=
+ce-width; } </style><style data-ac-keep=3D"true">=0A@media only screen and =
+(max-width: 600px) { /*----------------------------------------------------=
+---------------------*\ Abandoned Cart widget \*---------------------------=
+---------------------------------------------*/ .td_abandoned-cart img {dis=
+play: block;padding-right: 0 !important;padding-bottom: 0 !important;width:=
+ 100% !important;max-width: 100% !important;height: auto !important;} body =
+{ padding: 0!important; font-size:1em!important; } * { -webkit-box-sizing: =
+border-box; -moz-box-sizing: border-box; box-sizing: border-box; } *[class]=
+.divbody {-webkit-text-size-adjust:none !important;} *[class].td_picture im=
+g {width:auto !important;} *[class].td_text { line-height: 110%; } *[class]=
+.td_button { width: auto; } /* Collapse all block elements */ :not(.body) t=
+able { display: block!important; float:none!important; border-collapse:coll=
+apse !important; width:100% !important; min-width:100% !important; clear:bo=
+th!important; } :not(.body) thead, :not(.body) tbody,=0A:not(.body) tr { di=
+splay:block!important; float:none!important; width:100% !important; } :not(=
+.body) th, :not(.body) td, :not(.body) p { display:block!important; float:n=
+one!important; width:100% !important; clear:both!important; } /* Remove bro=
+wser default styling for elements */ ul, ol { margin-left: 20px; margin-bot=
+tom: 10px; margin-top: 10px; -webkit-margin-before: 0; -webkit-margin-after=
+: 0; -webkit-padding-start: 0; } /* Set default height for spacer once coll=
+apse */ *[class].spacer { height: auto!important; } a[href^=3Ddate]{ color:=
+inherit !important; text-decoration:none !important;} a[href^=3Dtelephone]{=
+ color:inherit !important; text-decoration:none !important;} a[href^=3Daddr=
+ess]{ color:inherit !important; text-decoration:none !important;} a[href^=
+=3Demail]{ color:inherit !important; text-decoration:none !important;} /* D=
+efault table cell height */ td[height=3D"11"]{height:11px!important;font-si=
+ze:11px!important;line-height:11px!important;}=0Atd[height=3D"12"]{height:1=
+2px!important;font-size:12px!important;line-height:12px!important;}=0Atd[he=
+ight=3D"14"]{height:14px!important;font-size:14px!important;line-height:14p=
+x!important;} /*-----------------------------------------------------------=
+--------------*\ Product Widget \*-----------------------------------------=
+--------------------------------*/ .td_product div, .td_product .products-d=
+isplay { float: none !important; display: block !important; width: 100% !im=
+portant; Margin-bottom: 20px !important; } .td_product img { width: 100% !i=
+mportant; max-width: 100% !important; } /* Default social icons */ *[class]=
+.ac-social-icon-16 {width:16px !important; height:16px !important;} *[class=
+].ac-social-icon-24 {width:24px !important; height:24px !important;} *[clas=
+s].ac-social-icon-28 {width:28px !important; height:28px !important;} *[cla=
+ss].__ac_social_icons { margin-right: 0px !important; } }=0A</style><style =
+data-ac-keep=3D"true"> @media only screen and (max-width: 320px) { div.divb=
+ody { padding: 20px !important; } table, tbody, td, .divbody { display: tab=
+le !important; width: 100% !important; max-width: 100% !important; } .td_rs=
+s .rss-item img.iphone_large_image { width: auto !important; } u + .body { =
+display: table !important; width: 100vw !important; min-width: 100vw !impor=
+tant; } u + .body table { display: table !important; width: 100% !important=
+; min-width: 100% !important; } u + .body td { display: block !important; w=
+idth: 100% !important; min-width: 100% !important; } u + .body img { displa=
+y: inline-block !important; margin: auto !important; width: auto !important=
+; vertical-align: bottom !important; } u + .body center { display: block !i=
+mportant; margin: auto !important; width: 100% !important; min-width: 100% =
+!important; text-align: center !important; } u + .body table._ac_social_tab=
+le, u + .body table._ac_social_table td, u + .body=0Atable._ac_social_table=
+ div, u + .body table._ac_social_table a { display: inline-block !important=
+; margin: auto !important; width: auto !important; min-width: auto !importa=
+nt; text-align: center !important; } u + .body table._ac_social_table img {=
+ display: inline-block !important; margin: auto !important; width: 32px !im=
+portant; min-width: 32px !important; max-width: 32px !important; }=0A}=0A@m=
+edia only screen and (max-width: 375px) { div.divbody { padding: 20px !impo=
+rtant; } table, tbody, td, .divbody { display: table !important; width: 100=
+% !important; max-width: 100% !important; } .td_rss .rss-item img.iphone_la=
+rge_image { width: auto !important; } u + .body { display: table !important=
+; width: 100vw !important; min-width: 100vw !important; } u + .body table {=
+ display: table !important; width: 100% !important; min-width: 100% !import=
+ant; } u + .body td { display: block !important; width: 100% !important; mi=
+n-width: 100% !important; } u + .body img { display: inline-block !importan=
+t; margin: auto !important; width: auto !important; vertical-align: bottom =
+!important; } u + .body center { display: block !important; margin: auto !i=
+mportant; width: 100% !important; min-width: 100% !important; text-align: c=
+enter !important; } u + .body table._ac_social_table, u + .body table._ac_s=
+ocial_table td, u + .body table._ac_social_table div, u + .body=0Atable._ac=
+_social_table a { display: inline-block !important; margin: auto !important=
+; width: auto !important; min-width: auto !important; text-align: center !i=
+mportant; } u + .body table._ac_social_table img { display: inline-block !i=
+mportant; margin: auto !important; width: 32px !important; min-width: 32px =
+!important; max-width: 32px !important; }=0A}=0A@media only screen and (max=
+-width: 414px) { div.divbody { padding: 20px !important; } table, tbody, td=
+, .divbody { display: table !important; width: 100% !important; max-width: =
+100% !important; } .td_rss .rss-item img.iphone_large_image { width: auto !=
+important; } u + .body { display: table !important; width: 100vw !important=
+; min-width: 100vw !important; } u + .body table { display: table !importan=
+t; width: 100% !important; min-width: 100% !important; } u + .body td { dis=
+play: block !important; width: 100% !important; min-width: 100% !important;=
+ } u + .body img { display: inline-block !important; margin: auto !importan=
+t; width: auto !important; vertical-align: bottom !important; } u + .body c=
+enter { display: block !important; margin: auto !important; width: 100% !im=
+portant; min-width: 100% !important; text-align: center !important; } u + .=
+body table._ac_social_table, u + .body table._ac_social_table td, u + .body=
+ table._ac_social_table div, u + .body=0Atable._ac_social_table a { display=
+: inline-block !important; margin: auto !important; width: auto !important;=
+ min-width: auto !important; text-align: center !important; } u + .body tab=
+le._ac_social_table img { display: inline-block !important; margin: auto !i=
+mportant; width: 32px !important; min-width: 32px !important; max-width: 32=
+px !important; }=0A}=0A@media only screen and (max-width: 667px) { div.divb=
+ody { padding: 20px !important; } table, tbody, td, .divbody { display: tab=
+le !important; width: 100% !important; max-width: 100% !important; } .td_rs=
+s .rss-item img.iphone_large_image { width: auto !important; } u + .body { =
+display: table !important; width: 100vw !important; min-width: 100vw !impor=
+tant; } u + .body table { display: table !important; width: 100% !important=
+; min-width: 100% !important; } u + .body td { display: block !important; w=
+idth: 100% !important; min-width: 100% !important; } u + .body img { displa=
+y: inline-block !important; margin: auto !important; width: auto !important=
+; vertical-align: bottom !important; } u + .body center { display: block !i=
+mportant; margin: auto !important; width: 100% !important; min-width: 100% =
+!important; text-align: center !important; } u + .body table._ac_social_tab=
+le, u + .body table._ac_social_table td, u + .body table._ac_social_table d=
+iv, u + .body=0Atable._ac_social_table a { display: inline-block !important=
+; margin: auto !important; width: auto !important; min-width: auto !importa=
+nt; text-align: center !important; } u + .body table._ac_social_table img {=
+ display: inline-block !important; margin: auto !important; width: 32px !im=
+portant; min-width: 32px !important; max-width: 32px !important; }=0A} </st=
+yle><!--[if !mso]><!-- webfonts --><!--<![endif]--><!--[if lt mso 12]> <![e=
+ndif]--><!--[if gte mso 9]>=0A<xml> <o:OfficeDocumentSettings> <o:AllowPNG/=
+> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings>=0A</xml=
+>=0A<![endif]--></head><body id=3D"ac-designer" class=3D"body" style=3D"fon=
+t-family: Arial; line-height: 1.1; margin: 0px; background-color: #ffffff; =
+width: 100%; text-align: center;">=09=09<div style=3D"display: none !import=
+ant; padding: 0; height: 1px; font-size: 1px; background-color: inherit !im=
+portant; opacity: 0; color: transparent; mso-line-height-rule: exactly; lin=
+e-height:1px; mso-hide:all;">=0A=09=09=09What if you could take your weekly=
+ sermons/podcasts and...=0A=09=09=09<div style=3D"display: none; max-height=
+: 0px; overflow: hidden;">=0A=09=09=09=09&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=0A=09=09=09</div>=
+=0A=0A=09=09</div>=0A<div class=3D"divbody" style=3D"margin: 0px; outline: =
+none; padding: 0px; color: #000000; font-family: arial; line-height: 1.1; w=
+idth: 100%; background-color: #ffffff; background: #ffffff; text-align: cen=
+ter;"><table class=3D"template-table" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" width=3D"100%" align=3D"left" style=3D"-ms-text-size-adjust: au=
+to; -webkit-text-size-adjust: 100%; border-collapse: collapse; font-size: 1=
+4px; min-width: auto; mso-table-lspace: 0pt; mso-table-rspace: 0pt; backgro=
+und-color: #ffffff; background: #ffffff;"><tr style=3D"mso-line-height-rule=
+: exactly;"><td align=3D"center" valign=3D"top" width=3D"100%" style=3D"mso=
+-line-height-rule: exactly;"><table class=3D"template-table" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"650" bgcolor=3D"#ffffff" style=
+=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-coll=
+apse: collapse; font-size: 14px; min-width: auto; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; max-width: 650px;"><tr=0Astyle=3D"mso-line-height-rule=
+: exactly;"><td id=3D"layout_table_a1ad250374342d1cc5e63b0c1ed5da8b02875bbe=
+" valign=3D"top" align=3D"center" width=3D"650" style=3D"mso-line-height-ru=
+le: exactly;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=
+=3D"layout layout-table root-table" width=3D"650" style=3D"-ms-text-size-ad=
+just: auto; -webkit-text-size-adjust: 100%; border-collapse: collapse; font=
+-size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;=
+"><tr style=3D"mso-line-height-rule: exactly;"><td id=3D"layout-row-margin2=
+167" valign=3D"top" style=3D"mso-line-height-rule: exactly; padding: 0;"><t=
+able width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-coll=
+apse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspac=
+e: 0pt; mso-table-rspace: 0pt;"><tr id=3D"layout-row2167" class=3D"layout l=
+ayout-row widget _widget_text style2167" style=3D"mso-line-height-rule: exa=
+ctly; margin: 0; padding:=0A0;"><td id=3D"layout-row-padding2167" valign=3D=
+"top" style=3D"mso-line-height-rule: exactly; padding: 0 0 20px 0;"><table =
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-m=
+s-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-collapse: =
+collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt;"><tr style=3D"mso-line-height-rule: exactly;"><td id=3D"text=
+_div2147" class=3D"td_text td_block" valign=3D"top" align=3D"left" width=3D=
+"650" style=3D"line-height: 140%; mso-line-height-rule: exactly; margin: 0;=
+ outline: none; padding: 0; color: inherit; font-size: 12px; font-weight: i=
+nherit; line-height: 1.4; text-decoration: inherit; font-family: arial;"> <=
+div style=3D"line-height: 140%; margin: 0; outline: none; padding: 0; color=
+: inherit; font-size: 11px; font-weight: inherit; line-height: 1.4; text-de=
+coration: inherit; mso-line-height-rule: exactly;" data-line-height=3D"1.4"=
+> <span class=3D"" style=3D"color: inherit; font-size: 11px;=0Afont-weight:=
+ inherit; line-height: inherit; text-decoration: inherit;"> </span><div sty=
+le=3D"margin: 0; outline: none; padding: 0; color: inherit; font-size: inhe=
+rit; font-weight: inherit; line-height: inherit; text-decoration: inherit; =
+text-align: center;"><br style=3D"font-size: 12px; color: #555555;"></div>=
+=0A<div style=3D"margin: 0; outline: none; padding: 0; color: inherit; font=
+-size: inherit; font-weight: inherit; line-height: inherit; text-decoration=
+: inherit; text-align: center;"><span style=3D"color: #555555; font-size: 1=
+2px; font-weight: inherit; line-height: inherit; text-decoration: inherit;"=
+ class=3D""><div style=3D"margin: 0; outline: none; padding: 0; color: inhe=
+rit; font-size: inherit; font-weight: inherit; line-height: inherit; text-d=
+ecoration: inherit; display: inline;"> <span style=3D"color: #555555; font-=
+size: 12px; font-weight: bold; line-height: inherit; text-decoration: inher=
+it;"> <span style=3D"color: #555555; font-size: 12px; font-weight: inherit;=
+ line-height: inherit; text-decoration: inherit;">You received this email b=
+ecause you signed up to learn about how to reach more people with your serm=
+ons or podcasts. </span> Don't want future emails?</span> </div>=0A<a href=
+=3D"http://gtbootcamp.activehosted.com/proc.php?nl=3D30&c=3D355&m=3D499&s=
+=3D61f9d41d9423930b87a5c702304080e4&act=3Dunsub" style=3D"margin: 0; outlin=
+e: none; padding: 0; color: #555555; text-decoration: underline; font-weigh=
+t: bold;" target=3D"_blank"><span style=3D"color: #555555; font-size: inher=
+it; font-weight: inherit; line-height: inherit; text-decoration: inherit;">=
+Unsubscribe</span></a><br></span></div>=0A </div>=0A<!--[if (gte mso 12)&(l=
+te mso 15) ]>=0A<style data-ac-keep=3D"true" data-ac-inline=3D"false"> #tex=
+t_div2147, #text_div2147 div { line-height: 140% !important; };=0A</style>=
+=0A<![endif]--></td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=
+=0A</tr>=0A<tr style=3D"mso-line-height-rule: exactly;"><td id=3D"layout-ro=
+w-margin2165" valign=3D"top" style=3D"mso-line-height-rule: exactly;"><tabl=
+e width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"=
+-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-collapse=
+: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-ta=
+ble-rspace: 0pt;"><tr id=3D"layout-row2165" class=3D"layout layout-row widg=
+et _widget_spacer " style=3D"mso-line-height-rule: exactly;"><td id=3D"layo=
+ut-row-padding2165" valign=3D"top" style=3D"mso-line-height-rule: exactly;"=
+><table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" sty=
+le=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-co=
+llapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;"><tr style=3D"mso-line-height-rule: exactly;"><td va=
+lign=3D"top" height=3D"30" style=3D"mso-line-height-rule: exactly;"><div cl=
+ass=3D"spacer" style=3D"margin: 0; outline: none; padding: 0;=0Aheight: 30p=
+x;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" =
+style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border=
+-collapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0p=
+t; mso-table-rspace: 0pt;"><tr style=3D"mso-line-height-rule: exactly;"><td=
+ class=3D"spacer-body" valign=3D"top" height=3D"30" width=3D"650" style=3D"=
+mso-line-height-rule: exactly;">=C2=A0</td>=0A</tr>=0A</table>=0A</div>=0A<=
+/td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A<tr st=
+yle=3D"mso-line-height-rule: exactly;"><td id=3D"layout-row-margin2164" val=
+ign=3D"top" style=3D"mso-line-height-rule: exactly;"><table width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adj=
+ust: auto; -webkit-text-size-adjust: 100%; border-collapse: collapse; font-=
+size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"=
+><tr id=3D"layout-row2164" class=3D"layout layout-row widget _widget_text "=
+ style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0;"><td id=3D"=
+layout-row-padding2164" valign=3D"top" style=3D"mso-line-height-rule: exact=
+ly;"><table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; borde=
+r-collapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt;"><tr style=3D"mso-line-height-rule: exactly;"><t=
+d id=3D"text_div2144" class=3D"td_text td_block" valign=3D"top" align=3D"le=
+ft" width=3D"650" style=3D"line-height: 140%;=0Amso-line-height-rule: exact=
+ly; margin: 0; outline: none; padding: 0; color: inherit; font-size: 12px; =
+font-weight: inherit; line-height: 1.4; text-decoration: inherit; font-fami=
+ly: arial;"> <div style=3D"line-height: 140%; margin: 0; outline: none; pad=
+ding: 0; color: inherit; font-size: 12px; font-weight: inherit; line-height=
+: 1.4; text-decoration: inherit; mso-line-height-rule: exactly;" class=3D""=
+ data-line-height=3D"1.4"> <div style=3D"margin: 0; outline: none; padding:=
+ 0; color: inherit; font-size: 14px; font-weight: inherit; line-height: inh=
+erit; text-decoration: inherit;" class=3D""> </div>=0A <span class=3D"" sty=
+le=3D"color: inherit; font-size: 14px; font-weight: inherit; line-height: i=
+nherit; text-decoration: inherit;"><span style=3D"color: inherit; font-size=
+: inherit; font-weight: inherit; line-height: inherit; text-decoration: inh=
+erit; font-family: arial;" class=3D""> <span style=3D"color: inherit; font-=
+size: inherit; font-weight: inherit; line-height: inherit; text-decoration:=
+ inherit; font-family: arial, helvetica, sans;">What if you could take your=
+ weekly audio/video sermons or podcasts and turn them into high-quality cus=
+tom-designed transcripts that could be used many different ways to reach mo=
+re people with your message?</span><br style=3D"font-family: arial, helveti=
+ca, sans;"><div dir=3D"auto" style=3D"margin: 0; outline: none; padding: 0;=
+ color: inherit; font-size: inherit; font-weight: inherit; line-height: inh=
+erit; text-decoration: inherit; text-align: start;"><br style=3D"font-famil=
+y: arial, helvetica, sans;"></div>=0A<div dir=3D"auto" style=3D"margin: 0; =
+outline: none; padding: 0; color: inherit; font-size: inherit; font-weight:=
+ inherit; line-height: inherit; text-decoration: inherit; text-align: start=
+;"><span style=3D"color: inherit; font-size: inherit; font-weight: bold; li=
+ne-height: inherit; text-decoration: inherit; font-family: arial, helvetica=
+, sans;">Examples:<br><br></span></div>=0A<ul style=3D"margin: 0 0 0 40px; =
+padding: 0;"><li style=3D"display: list-item; line-height: inherit; list-st=
+yle-type: disc; margin: 0 0 0 3px;"><span style=3D"color: inherit; font-siz=
+e: inherit; font-weight: inherit; line-height: inherit; text-decoration: in=
+herit; font-family: arial, helvetica, sans;">Newsletters</span></li><li sty=
+le=3D"display: list-item; line-height: inherit; list-style-type: disc; marg=
+in: 0 0 0 3px;"><span style=3D"color: inherit; font-size: inherit; font-wei=
+ght: inherit; line-height: inherit; text-decoration: inherit; font-family: =
+arial, helvetica, sans;">Blog posts</span></li><li style=3D"display: list-i=
+tem; line-height: inherit; list-style-type: disc; margin: 0 0 0 3px;"><span=
+ style=3D"color: inherit; font-size: inherit; font-weight: inherit; line-he=
+ight: inherit; text-decoration: inherit; font-family: arial, helvetica, san=
+s;">Social media posts</span></li><li style=3D"display: list-item; line-hei=
+ght: inherit; list-style-type: disc; margin: 0 0 0 3px;"><span=0Astyle=3D"c=
+olor: inherit; font-size: inherit; font-weight: inherit; line-height: inher=
+it; text-decoration: inherit; font-family: arial, helvetica, sans;">Daily e=
+mail devotions</span></li><li style=3D"display: list-item; line-height: inh=
+erit; list-style-type: disc; margin: 0 0 0 3px;"><span style=3D"color: inhe=
+rit; font-size: inherit; font-weight: inherit; line-height: inherit; text-d=
+ecoration: inherit; font-family: arial, helvetica, sans;">Group studies</sp=
+an></li><li style=3D"display: list-item; line-height: inherit; list-style-t=
+ype: disc; margin: 0 0 0 3px;"><span style=3D"color: inherit; font-size: in=
+herit; font-weight: inherit; line-height: inherit; text-decoration: inherit=
+; font-family: arial, helvetica, sans;">Online courses</span></li><li style=
+=3D"display: list-item; line-height: inherit; list-style-type: disc; margin=
+: 0 0 0 3px;"><span style=3D"color: inherit; font-size: inherit; font-weigh=
+t: inherit; line-height: inherit; text-decoration: inherit; font-family: ar=
+ial,=0Ahelvetica, sans;">Prison ministries</span></li><li style=3D"display:=
+ list-item; line-height: inherit; list-style-type: disc; margin: 0 0 0 3px;=
+"><span style=3D"color: inherit; font-size: inherit; font-weight: inherit; =
+line-height: inherit; text-decoration: inherit; font-family: arial, helveti=
+ca, sans;">Shut-in ministries</span></li><li style=3D"display: list-item; l=
+ine-height: inherit; list-style-type: disc; margin: 0 0 0 3px;"><span style=
+=3D"color: inherit; font-size: inherit; font-weight: inherit; line-height: =
+inherit; text-decoration: inherit; font-family: arial, helvetica, sans;">Bo=
+ok manuscripts</span></li></ul><br style=3D"font-family: arial, helvetica, =
+sans;"><div dir=3D"auto" style=3D"margin: 0; outline: none; padding: 0; col=
+or: inherit; font-size: inherit; font-weight: inherit; line-height: inherit=
+; text-decoration: inherit; text-align: start;"><span style=3D"color: inher=
+it; font-size: inherit; font-weight: inherit; line-height: inherit; text-de=
+coration: inherit;=0Afont-family: arial, helvetica, sans;">Not to mention t=
+hat simply posting a downloadable transcript beside your audio/video sermon=
+s/podcasts will help you reach three times as many people online than you'r=
+e reaching now.<br><br></span></div>=0A<div dir=3D"auto" style=3D"margin: 0=
+; outline: none; padding: 0; color: inherit; font-size: inherit; font-weigh=
+t: inherit; line-height: inherit; text-decoration: inherit; text-align: sta=
+rt;"><span style=3D"color: inherit; font-size: inherit; font-weight: inheri=
+t; line-height: inherit; text-decoration: inherit; font-family: arial, helv=
+etica, sans;">How awesome would that be? <br><br></span></div>=0A<div dir=
+=3D"auto" style=3D"margin: 0; outline: none; padding: 0; color: inherit; fo=
+nt-size: inherit; font-weight: inherit; line-height: inherit; text-decorati=
+on: inherit; text-align: start;"><span style=3D"color: inherit; font-size: =
+inherit; font-weight: inherit; line-height: inherit; text-decoration: inher=
+it; font-family: arial, helvetica, sans;"><span style=3D"color: inherit; fo=
+nt-size: inherit; font-weight: bold; line-height: inherit; text-decoration:=
+ inherit;">Note: </span>If your sermons are about 30 minutes long, it would=
+ cost your church/business about $400 per month, and the cost can be claime=
+d as an expense on your yearly taxes.<br><br></span> <span style=3D"color: =
+inherit; font-size: inherit; font-weight: inherit; line-height: inherit; te=
+xt-decoration: inherit; font-family: arial, helvetica, sans;"><span style=
+=3D"color: inherit; font-size: inherit; font-weight: bold; line-height: inh=
+erit; text-decoration: inherit;">Heads up:</span> I'm offering a huge end-o=
+f-year=0Adiscount on weekly transcription service. This discount will apply=
+ to <span style=3D"color: inherit; font-size: inherit; font-weight: inherit=
+; line-height: inherit; text-decoration: inherit; font-style: italic;">all =
+</span>your transcripts in 2023. This offer expires at the end of this week=
+. Let me know if you'd like the details.</span> </div>=0A<span style=3D"col=
+or: inherit; font-size: inherit; font-weight: inherit; line-height: inherit=
+; text-decoration: inherit; font-family: arial, helvetica, sans;"><br style=
+=3D"">Ready to get started? Click <a href=3D"https://gtbootcamp.lt.acemlnb.=
+com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMkZkaWdpdGFsc2VybW9udHJ=
+hbnNjcmlwdGlvbi53dWZvby5jb20lMkZmb3JtcyUyRm10MGNzbDEwamwyN3k1JTJG&sig=3DF4v=
+wWg8vUCYtWmQNk8vBonQoa4wzVmCHZ692akfSyLev&iat=3D1672160413&a=3D%7C%7C649253=
+065%7C%7C&account=3Dgtbootcamp%2Eactivehosted%2Ecom&email=3Dk03cBWZRpqH1g0S=
+OBW1XWkzkASpiHornD%2Fz2wZTd1jg%3D&s=3D61f9d41d9423930b87a5c702304080e4&i=3D=
+355A499A30A1428" data-ac-default-color=3D"1" style=3D"margin: 0; outline: n=
+one; padding: 0; color: #1c1c1c; text-decoration: underline; font-weight: b=
+old;" target=3D"_blank"><span style=3D"color: ; font-size: inherit; font-we=
+ight: inherit; line-height: inherit; text-decoration: inherit;">here</span>=
+</a> to fill out an order form.<br><br>Let me know if you have any question=
+s. <br><br>Ginger<br><br>P.S. Want to see samples of our work? Click <a=0Ah=
+ref=3D"https://gtbootcamp.lt.acemlnb.com/Prod/link-tracker?redirectUrl=3DaH=
+R0cHMlM0ElMkYlMkZpbnRlbnRpb25hbHJlYWNoLmNvbSUyRnNlcm1vbi10cmFuc2NyaXB0cw=3D=
+=3D&sig=3D4PFhQn4fB7PkYFqbYMkwtEYsPtA8x14iaoBbu8YqFyKx&iat=3D1672160413&a=
+=3D%7C%7C649253065%7C%7C&account=3Dgtbootcamp%2Eactivehosted%2Ecom&email=3D=
+k03cBWZRpqH1g0SOBW1XWkzkASpiHornD%2Fz2wZTd1jg%3D&s=3D61f9d41d9423930b87a5c7=
+02304080e4&i=3D355A499A30A1429" data-ac-default-color=3D"1" style=3D"margin=
+: 0; outline: none; padding: 0; color: #1c1c1c; text-decoration: underline;=
+ font-weight: bold;" target=3D"_blank"><span style=3D"color: ; font-size: i=
+nherit; font-weight: inherit; line-height: inherit; text-decoration: inheri=
+t;">here</span></a>.<br><br><br><span style=3D"color: inherit; font-size: i=
+nherit; font-weight: bold; line-height: inherit; text-decoration: inherit;"=
+>___________________________</span><br>Ginger Schell<br>Owner, <a href=3D"h=
+ttps://gtbootcamp.lt.acemlnb.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0=
+ElMkYlMkZpbnRlbnRpb25hbHJlYWNoLmNvbQ=3D=3D&sig=3DJBipC39emEBFNo5bAahhXcBgP9=
+ScuLMXJx7aFu4vPBNH&iat=3D1672160413&a=3D%7C%7C649253065%7C%7C&account=3Dgtb=
+ootcamp%2Eactivehosted%2Ecom&email=3Dk03cBWZRpqH1g0SOBW1XWkzkASpiHornD%2Fz2=
+wZTd1jg%3D&s=3D61f9d41d9423930b87a5c702304080e4&i=3D355A499A30A1430" style=
+=3D"margin: 0; outline:=0Anone; padding: 0; color: #1c1c1c; text-decoration=
+: underline; font-weight: bold;" target=3D"_blank" data-ac-default-color=3D=
+"1"><span style=3D"color: ; font-size: inherit; font-weight: inherit; line-=
+height: inherit; text-decoration: inherit;">Intentional Reach</span></a><br=
+>217.504.3914 (cell) </span></span><span style=3D"color: inherit; font-size=
+: inherit; font-weight: inherit; line-height: inherit; text-decoration: inh=
+erit; font-family: arial, helvetica, sans;"><br class=3D""><br class=3D""><=
+i class=3D"" style=3D"margin: 0; outline: none; padding: 0;"><b class=3D"" =
+style=3D"margin: 0; outline: none; padding: 0;">Are you ready to reach 3X m=
+ore people with transcripts? Start <a href=3D"https://gtbootcamp.lt.acemlnb=
+.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMkZkaWdpdGFsc2VybW9udH=
+JhbnNjcmlwdGlvbi53dWZvby5jb20lMkZmb3JtcyUyRm10MGNzbDEwamwyN3k1JTJG&sig=3DF4=
+vwWg8vUCYtWmQNk8vBonQoa4wzVmCHZ692akfSyLev&iat=3D1672160413&a=3D%7C%7C64925=
+3065%7C%7C&account=3Dgtbootcamp%2Eactivehosted%2Ecom&email=3Dk03cBWZRpqH1g0=
+SOBW1XWkzkASpiHornD%2Fz2wZTd1jg%3D&s=3D61f9d41d9423930b87a5c702304080e4&i=
+=3D355A499A30A1428" target=3D"_blank" data-ac-default-color=3D"1"=0Aclass=
+=3D"" style=3D"margin: 0; outline: none; padding: 0; color: #1c1c1c; text-d=
+ecoration: underline;"><span style=3D"color: ; font-size: inherit; font-wei=
+ght: inherit; line-height: inherit; text-decoration: inherit;" class=3D"">h=
+ere</span></a>.</b></i><i class=3D"" style=3D"margin: 0; outline: none; pad=
+ding: 0;"><b class=3D"" style=3D"margin: 0; outline: none; padding: 0;"><br=
+ class=3D""></b></i><br class=3D""></span><i class=3D"" style=3D"margin: 0;=
+ outline: none; padding: 0;"><b class=3D"" style=3D"margin: 0; outline: non=
+e; padding: 0;"><span style=3D"color: inherit; font-size: inherit; font-wei=
+ght: inherit; line-height: inherit; text-decoration: inherit; font-family: =
+arial, helvetica, sans;">"You guys have sold yourselves so that now I have =
+multiple ministries in the church clamoring and saying, 'Can I have my stuf=
+f transcribed too?'" ~ Watermark Church, Texas</span><br class=3D""></b></i=
+></span><br class=3D""><div class=3D"" style=3D"margin: 0; outline: none; p=
+adding: 0; color: inherit; font-size:=0Ainherit; font-weight: inherit; line=
+-height: inherit; text-decoration: inherit;"><span style=3D"color: inherit;=
+ font-size: 14px; font-weight: inherit; line-height: inherit; text-decorati=
+on: inherit; font-family: arial;" class=3D""><br class=3D""><br class=3D"">=
+</span> <p class=3D"" style=3D"margin: 0; outline: none; padding: 0; color:=
+ inherit; font-size: inherit; font-weight: inherit; line-height: inherit; t=
+ext-decoration: inherit;"></p>=0A </div>=0A </div>=0A<!--[if (gte mso 12)&(=
+lte mso 15) ]>=0A<style data-ac-keep=3D"true" data-ac-inline=3D"false"> #te=
+xt_div2144, #text_div2144 div { line-height: 140% !important; };=0A</style>=
+=0A<![endif]--></td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=
+=0A</tr>=0A<tr style=3D"mso-line-height-rule: exactly;"><td id=3D"layout-ro=
+w-margin2166" valign=3D"top" style=3D"mso-line-height-rule: exactly; paddin=
+g: 0;"><table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; bor=
+der-collapse: initial !important; font-size: 14px; min-width: 100%; mso-tab=
+le-lspace: 0pt; mso-table-rspace: 0pt;"><tr id=3D"layout-row2166" class=3D"=
+layout layout-row widget _widget_text style2166" style=3D"mso-line-height-r=
+ule: exactly; margin: 0; padding: 0;"><td id=3D"layout-row-padding2166" val=
+ign=3D"top" style=3D"mso-line-height-rule: exactly; padding: 0 0 20px 0;"><=
+table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-coll=
+apse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt;"><tr style=3D"mso-line-height-rule: exactly;"><td id=
+=3D"text_div2146" class=3D"td_text td_block" valign=3D"top"=0Aalign=3D"left=
+" width=3D"650" style=3D"line-height: 140%; mso-line-height-rule: exactly; =
+margin: 0; outline: none; padding: 0; color: inherit; font-size: 12px; font=
+-weight: inherit; line-height: 1.4; text-decoration: inherit; font-family: =
+arial;"> <div style=3D"line-height: 140%; margin: 0; outline: none; padding=
+: 0; color: inherit; font-size: 11px; font-weight: inherit; line-height: 1.=
+4; text-decoration: inherit; mso-line-height-rule: exactly;" data-line-heig=
+ht=3D"1.4"> <span class=3D"" style=3D"color: inherit; font-size: 11px; font=
+-weight: inherit; line-height: inherit; text-decoration: inherit;"> </span>=
+<div style=3D"margin: 0; outline: none; padding: 0; color: inherit; font-si=
+ze: inherit; font-weight: inherit; line-height: inherit; text-decoration: i=
+nherit; text-align: center;"><span style=3D"color: #555555; font-size: 12px=
+; font-weight: inherit; line-height: inherit; text-decoration: inherit;" cl=
+ass=3D""><br><br><br><br>Sent to: smith.nic@gmail.com</span></div>=0A<div s=
+tyle=3D"margin: 0; outline: none; padding: 0; color: inherit; font-size: in=
+herit; font-weight: inherit; line-height: inherit; text-decoration: inherit=
+; text-align: center;"><span style=3D"color: #555555; font-size: 12px; font=
+-weight: inherit; line-height: inherit; text-decoration: inherit;" class=3D=
+"">Intentional Reach, 3530 Verdier Blvd. Unit 1105, Charleston, SC 29414, U=
+nited States</span></div>=0A<div style=3D"margin: 0; outline: none; padding=
+: 0; color: inherit; font-size: inherit; font-weight: inherit; line-height:=
+ inherit; text-decoration: inherit; text-align: center;"><span style=3D"col=
+or: #555555; font-size: 12px; font-weight: inherit; line-height: inherit; t=
+ext-decoration: inherit;" class=3D""><div style=3D"margin: 0; outline: none=
+; padding: 0; color: inherit; font-size: inherit; font-weight: inherit; lin=
+e-height: inherit; text-decoration: inherit; display: inline;"> <span style=
+=3D"color: #555555; font-size: 12px; font-weight: bold; line-height: inheri=
+t; text-decoration: inherit;"> <span style=3D"color: #555555; font-size: 12=
+px; font-weight: inherit; line-height: inherit; text-decoration: inherit;">=
+You received this email because you signed up to learn about how to reach m=
+ore people with your sermons or podcasts. </span> Don't want future emails?=
+</span> </div>=0A<a href=3D"http://gtbootcamp.activehosted.com/proc.php?nl=
+=3D30&c=3D355&m=3D499&s=3D61f9d41d9423930b87a5c702304080e4&act=3Dunsub" sty=
+le=3D"margin: 0; outline: none; padding: 0; color: #555555; text-decoration=
+: underline; font-weight: bold;" target=3D"_blank"><span style=3D"color: #5=
+55555; font-size: inherit; font-weight: inherit; line-height: inherit; text=
+-decoration: inherit;">Unsubscribe</span></a><br></span></div>=0A<div style=
+=3D"margin: 0; outline: none; padding: 0; color: inherit; font-size: inheri=
+t; font-weight: inherit; line-height: inherit; text-decoration: inherit; te=
+xt-align: center;"><span style=3D"color: #555555; font-size: 12px; font-wei=
+ght: inherit; line-height: inherit; text-decoration: inherit;" class=3D""><=
+br><span style=3D"color: inherit; font-size: inherit; font-weight: bold; li=
+ne-height: inherit; text-decoration: inherit;">Ready to get your custom-des=
+igned transcripts? Fill out an order form <a href=3D"https://gtbootcamp.lt.=
+acemlnb.com/Prod/link-tracker?redirectUrl=3DaHR0cHMlM0ElMkYlMkZkaWdpdGFsc2V=
+ybW9udHJhbnNjcmlwdGlvbi53dWZvby5jb20lMkZmb3JtcyUyRm10MGNzbDEwamwyN3k1JTJG&s=
+ig=3DF4vwWg8vUCYtWmQNk8vBonQoa4wzVmCHZ692akfSyLev&iat=3D1672160413&a=3D%7C%=
+7C649253065%7C%7C&account=3Dgtbootcamp%2Eactivehosted%2Ecom&email=3Dk03cBWZ=
+RpqH1g0SOBW1XWkzkASpiHornD%2Fz2wZTd1jg%3D&s=3D61f9d41d9423930b87a5c70230408=
+0e4&i=3D355A499A30A1428" style=3D"margin: 0; outline: none; padding: 0; col=
+or: #555555; text-decoration: underline;" target=3D"_blank"><span style=3D"=
+color: #555555; font-size: inherit; font-weight: inherit; line-height: inhe=
+rit; text-decoration:=0Ainherit;">here</span></a>.</span><br></span></div>=
+=0A </div>=0A<!--[if (gte mso 12)&(lte mso 15) ]>=0A<style data-ac-keep=3D"=
+true" data-ac-inline=3D"false"> #text_div2146, #text_div2146 div { line-hei=
+ght: 140% !important; };=0A</style>=0A<![endif]--></td>=0A</tr>=0A</table>=
+=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</=
+table>=0A</td>=0A</tr>=0A</table>=0A</div>=0A<img src=3D"https://gtbootcamp=
+.lt.acemlnb.com/Prod/link-tracker?nl=3D30&c=3D355&m=3D499&s=3D61f9d41d94239=
+30b87a5c702304080e4&l=3Dopen&account=3Dgtbootcamp.activehosted.com&a=3D6492=
+53065" border=3D"0" width=3D"1" height=3D"1" style=3D"display:block;width:1=
+px!important;min-width:1px!important;max-width:1px!important;height:1px!imp=
+ortant;border:0;overflow:hidden;" /><br clear=3D"all" /></body>=0A</html>
+--_=_swift-90456462863ab249119cff8.17267029_=_--
+

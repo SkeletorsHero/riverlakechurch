@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — Landmark Network</title>
+  <meta name="description" content="Explore Landmark Network events including One Day coaching events and global mission trips to Costa Rica." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="images/brandmark.png" />
+  <style>
+    /* ── Full-width event hero cards ── */
+    .event-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 580px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+      margin-bottom: 3rem;
+    }
+
+    .event-feature__media {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .event-feature__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .event-feature:hover .event-feature__media img { transform: scale(1.04); }
+
+    .event-feature__body {
+      background: var(--primary);
+      color: var(--white);
+      padding: 4rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .event-feature__body.alt {
+      background: var(--dark);
+    }
+
+    .event-feature__logo {
+      height: 38px;
+      filter: brightness(0) invert(1);
+      margin-bottom: 2rem;
+    }
+
+    .event-feature__body h2 {
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .event-feature__body p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      line-height: 1.75;
+    }
+
+    .event-feature--reverse .event-feature__media { order: 2; }
+    .event-feature--reverse .event-feature__body  { order: 1; }
+
+    .event-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .event-detail__icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 10px;
+      margin-top: 2px;
+    }
+
+    .event-detail__text {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.5;
+    }
+
+    .event-details-list { margin-bottom: 2rem; }
+
+    @media (max-width: 768px) {
+      .event-feature {
+        grid-template-columns: 1fr;
+      }
+      .event-feature__media { min-height: 280px; }
+      .event-feature__body  { padding: 2.5rem 2rem; }
+      .event-feature--reverse .event-feature__media { order: 0; }
+      .event-feature--reverse .event-feature__body  { order: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVIGATION ══════════════════════════════════════════ -->
+  <nav class="nav scrolled" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Landmark Network" class="nav__logo" style="filter:none;" />
+      </a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html"    class="nav__link">Home</a></li>
+        <li><a href="about.html"    class="nav__link">Our Model</a></li>
+        <li><a href="churches.html" class="nav__link">Our Churches</a></li>
+        <li><a href="events.html"   class="nav__link active">Events</a></li>
+        <li><a href="members.html"  class="nav__link">Members</a></li>
+        <li><a href="mailto:nic@riverlakechurch.com" class="nav__cta btn">Connect With Us</a></li>
+      </ul>
+      <div class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══ PAGE HERO ════════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Get Involved</span>
+      <h1>Events &amp; Experiences</h1>
+      <div class="divider"></div>
+      <p>
+        Landmark creates intentional spaces for pastors and churches to grow,
+        connect, and go deeper — both locally and around the world.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ EVENTS ═══════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+
+      <!-- One Day -->
+      <div class="event-feature">
+        <div class="event-feature__media">
+          <img src="images/photo-gathering.jpg" alt="One Day coaching event" />
+        </div>
+        <div class="event-feature__body">
+          <img src="images/logo-one-day.png" alt="Landmark One Day" class="event-feature__logo" />
+          <h2>One Day</h2>
+          <p>
+            One Day is Landmark's signature coaching event — a full day hosted at
+            one of our member churches where pastors and church leaders come
+            together to learn, share honestly, and sharpen one another.
+          </p>
+          <div class="event-details-list">
+            <div class="event-detail">
+              <div class="event-detail__icon">→</div>
+              <div class="event-detail__text">Hosted on-site at a Landmark church location</div>
+            </div>
+            <div class="event-detail">
+              <div class="event-detail__icon">→</div>
+              <div class="event-detail__text">Full day of coaching, teaching, and open conversation</div>
+            </div>
+            <div class="event-detail">
+              <div class="event-detail__icon">→</div>
+              <div class="event-detail__text">Open to all Landmark partner churches</div>
+            </div>
+            <div class="event-detail">
+              <div class="event-detail__icon">→</div>
+              <div class="event-detail__text">Practical content for leaders at every stage</div>
+            </div>
+          </div>
+          <!-- UPDATE THIS LINK with actual One Day registration URL -->
+          <a href="REPLACE_WITH_ONE_DAY_LINK" target="_blank" rel="noopener" class="btn btn-primary">
+            View Upcoming Dates →
+          </a>
+        </div>
+      </div>
+
+      <!-- Missions -->
+      <div class="event-feature event-feature--reverse">
+        <div class="event-feature__media">
+          <img src="images/photo-baptism.jpg" alt="Global missions in Costa Rica" />
+        </div>
+        <div class="event-feature__body alt">
+          <img src="images/logo-missions.png" alt="Landmark Missions" class="event-feature__logo" />
+          <h2>Global Missions</h2>
+          <p>
+            Landmark sends teams to Costa Rica each year to partner with
+            Iglesia de la Ciudad and the For The City mission organization.
+            These trips are more than service — they're transformational
+            experiences that grow your faith and bind the network together.
+          </p>
+          <div class="event-details-list">
+            <div class="event-detail">
+              <div class="event-detail__icon">→</div>
+              <div class="event-detail__text">Partner location: San Jose, Costa Rica</div>
+            </div>
+            <div class="event-detail">
+              <div class="event-detail__icon">→</div>
+              <div class="event-detail__text">Serving local churches, schools, and feeding centers</div>
+            </div>
+            <div class="event-detail">
+              <div class="event-detail__icon">→</div>
+              <div class="event-detail__text">Multiple trips annually — spring and fall</div>
+            </div>
+            <div class="event-detail">
+              <div class="event-detail__icon">→</div>
+              <div class="event-detail__text">Open to all Landmark member churches</div>
+            </div>
+          </div>
+          <!-- UPDATE THIS LINK with actual missions registration URL -->
+          <a href="REPLACE_WITH_MISSIONS_LINK" target="_blank" rel="noopener" class="btn btn-primary">
+            Learn About Missions →
+          </a>
+        </div>
+      </div>
+
+      <!-- Retreat -->
+      <div class="event-feature">
+        <div class="event-feature__media">
+          <img src="images/photo-community.jpg" alt="Annual Landmark Retreat" />
+        </div>
+        <div class="event-feature__body">
+          <img src="images/logo-retreat.png" alt="Landmark Retreat" class="event-feature__logo" />
+          <h2>Annual Retreat</h2>
+          <p>
+            Once a year, Landmark's pastors step away from the demands of ministry
+            to rest, reconnect, and recharge together. The Landmark Retreat is
+            a dedicated time for the network to go deeper in relationship —
+            away from the pulpit, just as people.
+          </p>
+          <div class="event-details-list">
+            <div class="event-detail">
+              <div class="event-detail__icon">→</div>
+              <div class="event-detail__text">Annual gathering for Landmark pastors and leaders</div>
+            </div>
+            <div class="event-detail">
+              <div class="event-detail__icon">→</div>
+              <div class="event-detail__text">Focused on rest, renewal, and authentic community</div>
+            </div>
+            <div class="event-detail">
+              <div class="event-detail__icon">→</div>
+              <div class="event-detail__text">Details shared through the member portal</div>
+            </div>
+          </div>
+          <a href="members.html" class="btn btn-primary">
+            Access Member Portal →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ CTA ══════════════════════════════════════════════════ -->
+  <section class="cta-banner">
+    <div class="container">
+      <span class="eyebrow" style="color:rgba(255,255,255,0.5);">Not Yet a Member?</span>
+      <h2>Join the Network.<br>Access the Experience.</h2>
+      <p>Landmark events are built for Landmark churches. If you're not yet a part of the family, let's start that conversation today.</p>
+      <a href="mailto:nic@riverlakechurch.com" class="btn btn-primary">Learn About Our Model</a>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="images/logo.png" alt="Landmark Network" class="footer__logo" />
+          <p>A community of pastors committed to starting, strengthening, and setting churches to thrive.</p>
+        </div>
+        <div class="footer__col">
+          <h5>Network</h5>
+          <a href="about.html"    class="footer__link">Our Model</a>
+          <a href="churches.html" class="footer__link">Our Churches</a>
+          <a href="events.html"   class="footer__link">Events</a>
+          <a href="members.html"  class="footer__link">Member Portal</a>
+        </div>
+        <div class="footer__col">
+          <h5>Events</h5>
+          <a href="REPLACE_WITH_ONE_DAY_LINK"   target="_blank" class="footer__link">One Day</a>
+          <a href="REPLACE_WITH_MISSIONS_LINK"  target="_blank" class="footer__link">Missions</a>
+        </div>
+        <div class="footer__col">
+          <h5>Connect</h5>
+          <a href="mailto:nic@riverlakechurch.com" class="footer__link">nic@riverlakechurch.com</a>
+          <a href="http://www.landmarknetwork.com"  class="footer__link">landmarknetwork.com</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Landmark Network. All rights reserved.</span>
+        <span>Starting · Strengthening · Setting</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

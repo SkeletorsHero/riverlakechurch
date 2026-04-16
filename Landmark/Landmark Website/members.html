@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Portal — Landmark Network</title>
+  <meta name="description" content="Landmark Network member portal — access resources, events, and missions information." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="images/brandmark.png" />
+  <style>
+    body { background: var(--light-bg); }
+
+    /* ── Login Screen ── */
+    .login-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, #1a3349 0%, #2E4E68 50%, #1C1C1C 100%);
+    }
+
+    .login-box {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+
+    .login-box__logo {
+      height: 34px;
+      display: block;
+      margin: 0 auto 2.5rem;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .login-box > p {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+
+    .input-wrap { margin-bottom: 1rem; }
+
+    .input-wrap label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.03em;
+    }
+
+    .input-wrap input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      color: var(--dark);
+    }
+
+    .input-wrap input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(46,78,104,0.12);
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 0.95rem;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .login-btn:hover { background: #1a3349; transform: translateY(-1px); }
+    .login-btn:active { transform: translateY(0); }
+
+    .login-error {
+      display: none;
+      color: var(--accent);
+      font-size: 0.85rem;
+      text-align: center;
+      margin-top: 0.75rem;
+      font-weight: 500;
+    }
+
+    .login-hint {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-top: 1.5rem;
+    }
+
+    /* ── Portal Content (shown after login) ── */
+    .portal-page { display: none; min-height: 100vh; background: var(--light-bg); }
+
+    .portal-nav {
+      background: var(--white);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .portal-nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .portal-nav__logo { height: 30px; }
+
+    .portal-nav__right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .portal-nav__home {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--secondary);
+      transition: color 0.2s;
+    }
+    .portal-nav__home:hover { color: var(--primary); }
+
+    .portal-logout {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+      transition: color 0.2s;
+    }
+    .portal-logout:hover { color: #d4604f; }
+
+    .portal-header {
+      background: linear-gradient(135deg, var(--primary) 0%, #1a3349 100%);
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .portal-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .portal-header p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+    }
+
+    .portal-body {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+    }
+
+    .portal-body h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.25rem;
+      color: var(--dark);
+    }
+
+    .portal-body > p {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Portal Link Cards ── */
+    .portal-link-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+
+    .portal-link-card {
+      display: block;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .portal-link-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.16);
+    }
+
+    .portal-link-card__image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Gradient image placeholders for the 3 cards */
+    .portal-link-card__thumb {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portal-link-card__thumb--docs {
+      background: linear-gradient(135deg, #2E4E68 0%, #5C7586 100%);
+    }
+
+    .portal-link-card__thumb--events {
+      background: linear-gradient(135deg, #E47165 0%, #c45a4e 100%);
+    }
+
+    .portal-link-card__thumb--missions {
+      background: linear-gradient(135deg, #1C1C1C 0%, #3a3a3a 100%);
+    }
+
+    .portal-link-card__thumb-logo {
+      height: 42px;
+      filter: brightness(0) invert(1);
+    }
+
+    .portal-link-card__body {
+      background: var(--white);
+      padding: 1.5rem;
+    }
+
+    .portal-link-card__body h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+      color: var(--dark);
+    }
+
+    .portal-link-card__body p {
+      font-size: 0.875rem;
+      color: #888;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .portal-link-card__action {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: gap 0.2s;
+    }
+
+    .portal-link-card:hover .portal-link-card__action { gap: 0.6rem; }
+
+    .portal-notice {
+      background: rgba(46,78,104,0.07);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .portal-notice p {
+      font-size: 0.9rem;
+      color: var(--primary);
+      margin: 0;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .portal-link-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ LOGIN SCREEN ══════════════════════════════════════════ -->
+  <div id="login-screen" class="login-page">
+    <div class="login-box">
+      <img src="images/logo.png" alt="Landmark Network" class="login-box__logo" />
+      <h2>Member Portal</h2>
+      <p>Enter your access code to continue</p>
+
+      <div class="input-wrap">
+        <label for="portal-password">Access Code</label>
+        <input
+          type="password"
+          id="portal-password"
+          placeholder="Enter your code"
+          autocomplete="current-password"
+        />
+      </div>
+
+      <button class="login-btn" id="login-btn" onclick="checkPassword()">Sign In →</button>
+      <p class="login-error" id="login-error">Incorrect access code. Please try again.</p>
+      <p class="login-hint">Need access? Contact <a href="mailto:nic@riverlakechurch.com" style="color:var(--primary);">nic@riverlakechurch.com</a></p>
+    </div>
+  </div>
+
+  <!-- ══ PORTAL CONTENT ════════════════════════════════════════ -->
+  <div id="portal-content" class="portal-page">
+
+    <!-- Portal Nav -->
+    <div class="portal-nav">
+      <div class="portal-nav__inner">
+        <img src="images/logo.png" alt="Landmark Network" class="portal-nav__logo" />
+        <div class="portal-nav__right">
+          <a href="index.html" class="portal-nav__home">← Back to Site</a>
+          <button class="portal-logout" onclick="logout()">Sign Out</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portal Header -->
+    <div class="portal-header">
+      <span class="eyebrow" style="color:rgba(255,255,255,0.5);">Welcome Back</span>
+      <h1>Member Portal</h1>
+      <p>Your hub for everything Landmark — resources, events, and missions.</p>
+    </div>
+
+    <!-- Portal Body -->
+    <div class="portal-body">
+      <h2>Quick Access</h2>
+      <p>Click any card below to access resources and information for Landmark members.</p>
+
+      <div class="portal-link-cards">
+
+        <!-- Card 1: Resources / Documents -->
+        <!-- UPDATE href with your Google Drive link -->
+        <a href="REPLACE_WITH_GOOGLE_DRIVE_LINK" target="_blank" rel="noopener" class="portal-link-card">
+          <div class="portal-link-card__thumb portal-link-card__thumb--docs">
+            <img src="images/brandmark.png" alt="" class="portal-link-card__thumb-logo" />
+          </div>
+          <div class="portal-link-card__body">
+            <h3>Resources &amp; Documents</h3>
+            <p>Theology docs, bylaws, applications, and everything you need as a Landmark church.</p>
+            <span class="portal-link-card__action">Open in Google Drive →</span>
+          </div>
+        </a>
+
+        <!-- Card 2: One Day Events -->
+        <!-- UPDATE href with your One Day event link -->
+        <a href="REPLACE_WITH_ONE_DAY_LINK" target="_blank" rel="noopener" class="portal-link-card">
+          <div class="portal-link-card__thumb portal-link-card__thumb--events">
+            <img src="images/logo-one-day.png" alt="" class="portal-link-card__thumb-logo" />
+          </div>
+          <div class="portal-link-card__body">
+            <h3>One Day Events</h3>
+            <p>Upcoming One Day coaching events — dates, locations, and registration details.</p>
+            <span class="portal-link-card__action">View Upcoming Events →</span>
+          </div>
+        </a>
+
+        <!-- Card 3: Missions -->
+        <!-- UPDATE href with your Missions link -->
+        <a href="REPLACE_WITH_MISSIONS_LINK" target="_blank" rel="noopener" class="portal-link-card">
+          <div class="portal-link-card__thumb portal-link-card__thumb--missions">
+            <img src="images/logo-missions.png" alt="" class="portal-link-card__thumb-logo" />
+          </div>
+          <div class="portal-link-card__body">
+            <h3>Mission Trips</h3>
+            <p>Costa Rica trip details, team rosters, timelines, and preparation materials.</p>
+            <span class="portal-link-card__action">View Mission Info →</span>
+          </div>
+        </a>
+
+      </div><!-- /portal-link-cards -->
+
+      <div class="portal-notice">
+        <p>
+          💬 &nbsp;Need to update the links above or add something to the portal?
+          Just ask Claude in the Cowork app to make changes to <strong>members.html</strong>.
+        </p>
+      </div>
+
+    </div><!-- /portal-body -->
+  </div><!-- /portal-content -->
+
+  <script>
+    /* ══════════════════════════════════════════════════════════
+       LANDMARK MEMBER PORTAL — Password Gate
+       To change the access code, update the PORTAL_PASSWORD
+       value below and save the file.
+    ══════════════════════════════════════════════════════════ */
+    const PORTAL_PASSWORD = 'landmark2026'; // ← CHANGE THIS
+
+    function checkPassword() {
+      const input = document.getElementById('portal-password').value.trim();
+      const errorEl = document.getElementById('login-error');
+
+      if (input === PORTAL_PASSWORD) {
+        // Store session (clears when browser is closed)
+        sessionStorage.setItem('lm_auth', 'true');
+        showPortal();
+      } else {
+        errorEl.style.display = 'block';
+        document.getElementById('portal-password').value = '';
+        document.getElementById('portal-password').focus();
+      }
+    }
+
+    function showPortal() {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('portal-content').style.display = 'block';
+    }
+
+    function logout() {
+      sessionStorage.removeItem('lm_auth');
+      document.getElementById('login-screen').style.display = 'flex';
+      document.getElementById('portal-content').style.display = 'none';
+      document.getElementById('portal-password').value = '';
+    }
+
+    // Allow Enter key to submit
+    document.getElementById('portal-password').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') checkPassword();
+    });
+
+    // Auto-login if session is active
+    if (sessionStorage.getItem('lm_auth') === 'true') {
+      showPortal();
+    }
+  </script>
+</body>
+</html>

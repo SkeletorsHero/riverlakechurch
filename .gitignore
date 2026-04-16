@@ -1,0 +1,46 @@
+# ─── Sermon Transcripts (large, read-only reference material) ────────────────
+Sermon Prep/Outside Sermon Transcripts/
+
+# ─── macOS ───────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# ─── Google Drive ────────────────────────────────────────────────────────────
+# Temporary sync conflict files created by Google Drive
+*.gdoc
+*.gsheet
+*.gslides
+*\ (conflict\ copy\ *).
+*\ (conflicted\ copy\ *).
+
+# ─── Editor & IDE ────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── Common OS Junk ──────────────────────────────────────────────────────────
+*.log
+*.tmp
+*.bak
+*.orig
+
+# ─── Node / Web (if any projects live here later) ────────────────────────────
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+
+# ─── Python (if any scripts live here) ───────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.venv/
